@@ -42,3 +42,14 @@ export const getAllEmployeesWithoutSalesRepresentative = async () =>{
     })
     return dataUpdate;
 }
+
+
+
+
+
+//obtener la informacion de un empleado por su codigo
+export const getEmployByCode = async (code) => {
+    let res = await fetch(`http://localhost:5502/employees?employee_code=${code}`);
+    let dataClients = await res.json();
+    return dataClients;
+}

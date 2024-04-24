@@ -10,7 +10,8 @@ import {
 } from "./module/employees.js";
 
 import {
-    getAllSpanishClientes
+    getAllSpanishClientes,
+    getClienteEmploy
 } from "./module/clients.js";
 
 import {
@@ -19,6 +20,8 @@ import {
     getAllAfterTimeDeliveryCodeAndDate,
     getAllBeforeTimeDeliveryCodeAndDate
 } from "./module/requests.js";
+
+
 
 // console.log(await getAllOfficesCodeAndCity());
 // console.log(await getAllOfficesFromSpainCityAndMovil());
@@ -29,4 +32,5 @@ import {
 //console.log(await getAllStates());
 //console.log(await getAllDateTwoThousandEightCodeClient());
 //console.log(await getAllAfterTimeDeliveryCodeAndDate());
-console.log(await getAllBeforeTimeDeliveryCodeAndDate());
+//console.log(await getAllBeforeTimeDeliveryCodeAndDate());
+console.log(await getClienteEmploy());

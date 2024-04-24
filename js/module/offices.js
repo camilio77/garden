@@ -25,3 +25,12 @@ export const getAllOfficesFromSpainCityAndMovil = async () =>{
     });
     return dataUpdate;
 }
+
+
+
+//obtener info de una oficina por su codigo
+export const getOfficesByCode = async (code) => {
+    let res = await fetch(`http://localhost:5504/offices?code_office=${code}`);
+    let dataClients = await res.json();
+    return dataClients;
+}
