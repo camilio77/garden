@@ -15,7 +15,9 @@ import {
 
 import {
     getAllStates,
-    getAll
+    getAllDateTwoThousandEightCodeClient,
+    getAllAfterTimeDeliveryCodeAndDate,
+    getAllBeforeTimeDeliveryCodeAndDate
 } from "./module/requests.js";
 
 // console.log(await getAllOfficesCodeAndCity());
@@ -24,5 +26,7 @@ import {
 // console.log(await getBossFullNameAndEmail());
 // console.log(await getAllEmployeesWithoutSalesRepresentative());
 // console.log(await getAllSpanishClientes());
-console.log(await getAllStates());
-// console.log(await getAll());
+//console.log(await getAllStates());
+//console.log(await getAllDateTwoThousandEightCodeClient());
+//console.log(await getAllAfterTimeDeliveryCodeAndDate());
+console.log(await getAllBeforeTimeDeliveryCodeAndDate());
