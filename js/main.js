@@ -18,8 +18,14 @@ import {
     getAllStates,
     getAllDateTwoThousandEightCodeClient,
     getAllAfterTimeDeliveryCodeAndDate,
-    getAllBeforeTimeDeliveryCodeAndDate
+    getAllBeforeTimeDeliveryCodeAndDate,
+    getAllRequestsRefused,
+    getAllRequestsDeliveredInJanuary
 } from "./module/requests.js";
+
+import {
+    getAllPaymentsFromTwoThousandEight
+} from "./module/payments.js";
 
 
 
@@ -32,5 +38,8 @@ import {
 //console.log(await getAllStates());
 //console.log(await getAllDateTwoThousandEightCodeClient());
 //console.log(await getAllAfterTimeDeliveryCodeAndDate());
-//console.log(await getAllBeforeTimeDeliveryCodeAndDate());
-console.log(await getClienteEmploy());
+// console.log(await getAllBeforeTimeDeliveryCodeAndDate());
+// console.log(await getClienteEmploy());
+// console.log(await getAllRequestsRefused());
+// console.log(await getAllRequestsDeliveredInJanuary());
+console.log(await getAllPaymentsFromTwoThousandEight());
