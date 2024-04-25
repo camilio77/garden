@@ -11,7 +11,8 @@ import {
 
 import {
     getAllSpanishClientes,
-    getClienteEmploy
+    getClienteEmploy,
+    getAllClientsFromMadrid
 } from "./module/clients.js";
 
 import {
@@ -24,8 +25,13 @@ import {
 } from "./module/requests.js";
 
 import {
-    getAllPaymentsFromTwoThousandEight
+    getAllPaymentsFromTwoThousandEight,
+    getAllPayments
 } from "./module/payments.js";
+
+import {
+    getAllProductsWithGamaOrnamentales
+} from "./module/product.js"
 
 
 
@@ -42,4 +48,7 @@ import {
 // console.log(await getClienteEmploy());
 // console.log(await getAllRequestsRefused());
 // console.log(await getAllRequestsDeliveredInJanuary());
-console.log(await getAllPaymentsFromTwoThousandEight());
+//console.log(await getAllPaymentsFromTwoThousandEight());
+//console.log(await getAllPayments());
+//console.log(await getAllProductsWithGamaOrnamentales());
+console.log(await getAllClientsFromMadrid());

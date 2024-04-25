@@ -10,7 +10,20 @@ export const getAllPaymentsFromTwoThousandEight = async () =>{
                 monto: val.total,
                 fecha: val.date_payment
             })
-            dataUpdate.sort(function(a,b){return a,b});
+            dataUpdate.sort((a, b) => b.monto - a.monto);
+        }
+    })
+    return dataUpdate;
+}
+
+//14. Devuelve un listado con todas las formas de pago que aparecen en la tabla `pago`. Tenga en cuenta que no deben aparecer formas de pago repetidas.
+export const getAllPayments = async () =>{
+    let res = await fetch("http://localhost:5505/payments")
+    let data = await res.json();
+    let dataUpdate = [];
+    data.forEach(val => {
+        if(!dataUpdate.includes(val.payment)){
+            dataUpdate.push(val.payment);
         }
     })
     return dataUpdate;

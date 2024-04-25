@@ -15,15 +15,12 @@ export const getAllDateTwoThousandEightCodeClient = async () =>{
     let dataUpdate = [];
     data.forEach(val => {
         if(val.date_request[3] == "8"){
-            dataUpdate.push({
-                cliente: val.code_client
-            })
+            if(!dataUpdate.includes(val.code_client)){
+                dataUpdate.push(val.code_client)
+            }
         }
     })
-    const data2 = dataUpdate.reduce(function (status, client){
-        return Array.from(new Set([...status, client.cliente]))
-    }, [])
-    return data2;
+    return dataUpdate;
 }
 
 //9. Devuelve un listado con el código de pedido, código de cliente, fecha esperada y fecha de entrega de los pedidos que no han sido entregados a tiempo.
