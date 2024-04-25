@@ -28,3 +28,11 @@ export const getAllPayments = async () =>{
     })
     return dataUpdate;
 }
+
+
+//obtener codigo de cliente que haya realizado un pago por su codigo
+export const getPaymentByCode = async (code) => {
+    let res = await fetch(`http://localhost:5505/payments?code_client=${code}`);
+    let dataClients = await res.json();
+    return dataClients;
+}

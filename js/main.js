@@ -12,7 +12,10 @@ import {
 import {
     getAllSpanishClientes,
     getClienteEmploy,
-    getAllClientsFromMadrid
+    getAllClientsFromMadrid,
+    getClienteEmployWithPaymentsAndManager,
+    getClientAndManager
+
 } from "./module/clients.js";
 
 import {
@@ -51,4 +54,6 @@ import {
 //console.log(await getAllPaymentsFromTwoThousandEight());
 //console.log(await getAllPayments());
 //console.log(await getAllProductsWithGamaOrnamentales());
-console.log(await getAllClientsFromMadrid());
+// console.log(await getAllClientsFromMadrid());
+console.log(await getClienteEmployWithPaymentsAndManager());
+// console.log(await getClientAndManager());
