@@ -31,10 +31,10 @@ export const  getAllAfterTimeDeliveryCodeAndDate = async () =>{
     data.forEach(val => {
         if(val.date_wait < val.date_delivery){
             dataUpdate.push({
-                pedido: val.code_request,
-                cliente: val.code_client,
-                fecha_esperada: val.date_wait,
-                fecha_entrega: val.date_delivery
+                request: val.code_request,
+                client: val.code_client,
+                date_wait: val.date_wait,
+                date_delivery: val.date_delivery
             })
         }
     })
@@ -49,22 +49,22 @@ export const  getAllBeforeTimeDeliveryCodeAndDate = async () =>{
     data.forEach(val => {
         if(val.date_delivery == null){
             dataUpdate.push({
-                estado: val.status,
-                pedido: val.code_request,
-                cliente: val.code_client,
-                fecha_esperada: val.date_wait,
-                fecha_entrega: null
+                status: val.status,
+                request: val.code_request,
+                client: val.code_client,
+                date_wait: val.date_wait,
+                date_delivery: null
             })
         } else{
             let x = Number(val.date_wait[8] + val.date_wait[9]) - Number(val.date_delivery[8] + val.date_delivery[9]);
             let y = Number(val.date_delivery[5] + val.date_delivery[6]) - Number(val.date_wait[5] + val.date_wait[6]);
             if(x >= 2 && y <= 0){
                 dataUpdate.push({
-                    estado: val.status,
-                    pedido: val.code_request,
-                    cliente: val.code_client,
-                    fecha_esperada: val.date_wait,
-                    fecha_entrega: val.date_delivery
+                    status: val.status,
+                    request: val.code_request,
+                    client: val.code_client,
+                    date_wait: val.date_wait,
+                    date_delivery: val.date_delivery
                 })
             }
         }        
@@ -80,10 +80,10 @@ export const getAllRequestsRefused = async () =>{
     data.forEach(val => {
         if(val.date_request[3] == "9"){
             dataUpdate.push({
-                pedido: val.code_request,
-                cliente: val.code_client,
-                fecha_esperada: val.date_wait,
-                fecha_entrega: val.date_delivery
+                request: val.code_request,
+                client: val.code_client,
+                date_wait: val.date_wait,
+                date_delivery: val.date_delivery
             })
         }
     })
@@ -101,7 +101,7 @@ export const getAllRequestsDeliveredInJanuary = async () =>{
         } else {
             if(val.date_request[5] == "0" && val.date_request[6] == "1" ){
                 dataUpdate.push({
-                    pedido: val.code_request
+                    request: val.code_request
                 })
             }
         }

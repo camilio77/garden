@@ -5,8 +5,8 @@ export const getAllEmployeesWithBossAndCodeSeven = async () =>{
     let dataUpdate = [];
     data.forEach(val => {
         dataUpdate.push({
-            nombre: val.name,
-            apellidos: `${val.lastname1} ${val.lastname2}`,
+            name: val.name,
+            lastnames: `${val.lastname1} ${val.lastname2}`,
             email: val.email.match(/(?<=\[)[^\[\]]+@[^@\[\]]+(?=\])/)[0]
         })
     })
@@ -19,9 +19,9 @@ export const getBossFullNameAndEmail = async () =>{
     let dataUpdate = {};
     data.forEach(val => {
         if(val.code_boss == null){
-            dataUpdate.nombreDelPuesto = val.position;
-            dataUpdate.nombre = val.name;
-            dataUpdate.apellidos = `${val.lastname1} ${val.lastname2}`;
+            dataUpdate.position = val.position;
+            dataUpdate.name = val.name;
+            dataUpdate.lastnames = `${val.lastname1} ${val.lastname2}`;
             dataUpdate.email = val.email.match(/(?<=\[)[^\[\]]+@[^@\[\]]+(?=\])/)[0];
         }
     })
@@ -35,9 +35,9 @@ export const getAllEmployeesWithoutSalesRepresentative = async () =>{
     let dataUpdate = [];
     data.forEach(val => {
         dataUpdate.push({
-            nombre: val.name,
-            apellidos: `${val.lastname1} ${val.lastname2}`,
-            puesto: val.position
+            name: val.name,
+            lastnames: `${val.lastname1} ${val.lastname2}`,
+            position: val.position
         })
     })
     return dataUpdate;

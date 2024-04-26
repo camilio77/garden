@@ -49,7 +49,7 @@ export const getAllClientsFromMadrid = async () =>{
 
 
 // 7. Devuelve el nombre de los clientes y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
-export const getClienteEmploy = async () => {
+export const getClientsEmploy = async () => {
     let res = await fetch("http://localhost:5501/clients");
     let clients = await res.json();
     let clientsData = [];

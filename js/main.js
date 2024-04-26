@@ -14,7 +14,7 @@ import {
 
 import {
     getAllSpanishClientes,
-    getClienteEmploy,
+    getClientsEmploy,
     getAllClientsFromMadrid,
     getAllClientsWithPaymentsAndManager,
     getClientAndManager,
