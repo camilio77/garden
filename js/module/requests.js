@@ -108,3 +108,10 @@ export const getAllRequestsDeliveredInJanuary = async () =>{
     })
     return dataUpdate;
 }
+
+//obtener la informacion de un pedido por su cliente
+export const getRequestByCode = async (code) => {
+    let res = await fetch(`http://localhost:5508/requests?code_client=${code}`);
+    let dataClients = await res.json();
+    return dataClients;
+}

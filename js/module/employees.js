@@ -53,3 +53,63 @@ export const getEmployByCode = async (code) => {
     let dataClients = await res.json();
     return dataClients;
 }
+//obtener la informacion de un empleado por su codigo
+export const getEmployByOffice = async (office) => {
+    let res = await fetch(`http://localhost:5502/employees?code_office=${office}`);
+    let dataClients = await res.json();
+    return dataClients;
+}
+
+
+//8. Devuelve un listado con el nombre de los empleados junto con el nombre de sus jefes.
+export const getAllEmployeesAndBosses = async () => {
+    let res = await fetch("http://localhost:5502/employees");
+    let employees = await res.json();
+    let employeesData = [];
+    for (let i = 0; i < employees.length; i++){
+        if (employees[i].code_boss == null){
+            employeesData.push({
+                employe_name: employees[i].name,
+                code_boss: employees[i].code_boss
+            })
+        } else {
+            employeesData.push({
+                employe_name: employees[i].name,
+                code_boss: employees[i].code_boss,
+                boss_name: employees[(employees[i].code_boss) - 1].name
+            })
+        }
+    }
+    return employeesData;
+}
+
+//9. Devuelve un listado que muestre el nombre de cada empleados, el nombre de su jefe y el nombre del jefe de sus jefe.
+export const getAllEmployeesAndBossesOfTheBosses = async () => {
+    let res = await fetch("http://localhost:5502/employees");
+    let employees = await res.json();
+    let employeesData = [];
+    for (let i = 0; i < employees.length; i++){
+        if (employees[i].code_boss == null){
+            employeesData.push({
+                employe_name: employees[i].name,
+                code_boss: employees[i].code_boss
+            })
+        } else if(employees[(employees[i].code_boss) - 1].code_boss == null){
+            employeesData.push({
+                employe_name: employees[i].name,
+                code_boss: employees[i].code_boss,
+                boss_name: employees[(employees[i].code_boss) - 1].name,
+                code_boss_from_boss: employees[(employees[i].code_boss) - 1].code_boss
+            })
+        } else {
+            employeesData.push({
+                employe_name: employees[i].name,
+                code_boss: employees[i].code_boss,
+                boss_name: employees[(employees[i].code_boss) - 1].name,
+                code_boss_from_boss: employees[(employees[i].code_boss) - 1].code_boss,
+                boss_name_from_boss: employees[(employees[(employees[i].code_boss) - 1].code_boss) - 1].name
+            })
+        }
+    }
+    return employeesData;
+}

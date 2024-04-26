@@ -1,21 +1,27 @@
 import { 
     getAllOfficesCodeAndCity, 
-    getAllOfficesFromSpainCityAndMovil 
+    getAllOfficesFromSpainCityAndMovil,
+    getAllDirectionsFromOffices
 } from "./module/offices.js";
 
 import { 
     getAllEmployeesWithBossAndCodeSeven, 
     getAllEmployeesWithoutSalesRepresentative,
-    getBossFullNameAndEmail
+    getBossFullNameAndEmail,
+    getAllEmployeesAndBosses,
+    getAllEmployeesAndBossesOfTheBosses
 } from "./module/employees.js";
 
 import {
     getAllSpanishClientes,
     getClienteEmploy,
     getAllClientsFromMadrid,
-    getClienteEmployWithPaymentsAndManager,
-    getClientAndManager
-
+    getAllClientsWithPaymentsAndManager,
+    getClientAndManager,
+    getAllClientsWithoutPaymentsAndManager,
+    getAllClientsWithPaymentsManagerAndCity,
+    getAllClientsWithoutPaymentsManagerAndCity,
+    getAllClientsWithRequestsOutOffTime
 } from "./module/clients.js";
 
 import {
@@ -48,12 +54,19 @@ import {
 //console.log(await getAllDateTwoThousandEightCodeClient());
 //console.log(await getAllAfterTimeDeliveryCodeAndDate());
 // console.log(await getAllBeforeTimeDeliveryCodeAndDate());
-// console.log(await getClienteEmploy());
+//console.log(await getClienteEmploy());
 // console.log(await getAllRequestsRefused());
 // console.log(await getAllRequestsDeliveredInJanuary());
 //console.log(await getAllPaymentsFromTwoThousandEight());
 //console.log(await getAllPayments());
 //console.log(await getAllProductsWithGamaOrnamentales());
 // console.log(await getAllClientsFromMadrid());
-console.log(await getClienteEmployWithPaymentsAndManager());
-// console.log(await getClientAndManager());
+//console.log(await getAllClientsWithPaymentsAndManager());
+//console.log(await getClientAndManager());
+//console.log(await getAllClientsWithoutPaymentsAndManager());
+//console.log(await getAllClientsWithPaymentsManagerAndCity());
+//console.log(await getAllClientsWithoutPaymentsManagerAndCity());
+//console.log(await getAllDirectionsFromOffices());
+//console.log(await getAllEmployeesAndBosses());
+//console.log(await getAllEmployeesAndBossesOfTheBosses());
+console.log(await getAllClientsWithRequestsOutOffTime());
