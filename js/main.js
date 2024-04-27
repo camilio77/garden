@@ -42,6 +42,10 @@ import {
     getAllProductsWithGamaOrnamentales
 } from "./module/product.js"
 
+import {
+    getAll
+} from "./module/gama.js"
+
 
 
 // console.log(await getAllOfficesCodeAndCity());
@@ -69,4 +73,5 @@ import {
 //console.log(await getAllDirectionsFromOffices());
 //console.log(await getAllEmployeesAndBosses());
 //console.log(await getAllEmployeesAndBossesOfTheBosses());
-console.log(await getAllClientsWithRequestsOutOffTime());
+//console.log(await getAllClientsWithRequestsOutOffTime());
+console.log(await getAll());

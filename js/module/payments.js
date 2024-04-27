@@ -7,8 +7,8 @@ export const getAllPaymentsFromTwoThousandEight = async () =>{
         if(val.date_payment[3] == "8"){
             dataUpdate.push({
                 id: val.id,
-                monto: val.total,
-                fecha: val.date_payment
+                total: val.total,
+                date: val.date_payment
             })
             dataUpdate.sort((a, b) => b.monto - a.monto);
         }

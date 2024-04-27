@@ -7,11 +7,18 @@ export const getAllProductsWithGamaOrnamentales = async () =>{
         if(val.stock > 100){
             dataUpdate.push({
                 id: val.id,
-                nombre: val.name,
-                precio: val.price_sale
+                name: val.name,
+                price: val.price_sale
             })
             dataUpdate.sort((a, b) => b.precio - a.precio);
         }
     })
     return dataUpdate;
+}
+
+//obtener un producto por su codigo
+export const getProductInfoByCode = async (code) => {
+    let res = await fetch(`http://localhost:5506/products?code_product=${code}`)
+    let data = await res.json();
+    return data;
 }

@@ -22,7 +22,7 @@ export const getAllSpanishClientes = async () =>{
     let dataUpdate = [];
     data.forEach(val => {
         dataUpdate.push({
-            nombre: val.contact_name
+            name: val.contact_name
         })
     })
     return dataUpdate;
@@ -37,8 +37,8 @@ export const getAllClientsFromMadrid = async () =>{
         if(val.code_employee_sales_manager == 11 || val.code_employee_sales_manager == 30){
             dataUpdate.push({
                 id: val.id,
-                nombre: val.client_name,
-                codigo_representante: val.code_employee_sales_manager
+                name: val.client_name,
+                manager_code: val.code_employee_sales_manager
             })
         }
     })
@@ -164,6 +164,12 @@ export const getClientsByCode = async () => {
     return dataClients;
 }
 
+//obeter info de cliente
+export const getClients = async () => {
+    let res = await fetch(`http://localhost:5501/clients?client_code`)
+    let dataClients = await res.json();
+    return dataClients;
+}
 
 //10. Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.
 export const getAllClientsWithRequestsOutOffTime = async () => {
