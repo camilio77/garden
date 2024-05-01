@@ -67,6 +67,7 @@ export const getAllEmployeesAndBosses = async () => {
     let employees = await res.json();
     let employeesData = [];
     for (let i = 0; i < employees.length; i++){
+        let [boss] = getEmployByCode(employees[i].code_boss);
         if (employees[i].code_boss == null){
             employeesData.push({
                 employe_name: employees[i].name,

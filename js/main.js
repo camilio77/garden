@@ -21,7 +21,10 @@ import {
     getAllClientsWithoutPaymentsAndManager,
     getAllClientsWithPaymentsManagerAndCity,
     getAllClientsWithoutPaymentsManagerAndCity,
-    getAllClientsWithRequestsOutOffTime
+    getAllClientsWithRequestsOutOffTime,
+    getAllClientsWithoutPayments,
+    getAllClientsWithoutRequests,
+    getAllClientsWithoutRequestsAndPayments
 } from "./module/clients.js";
 
 import {
@@ -74,4 +77,7 @@ import {
 //console.log(await getAllEmployeesAndBosses());
 //console.log(await getAllEmployeesAndBossesOfTheBosses());
 //console.log(await getAllClientsWithRequestsOutOffTime());
-console.log(await getAll());
+//console.log(await getAll());
+//console.log(await getAllClientsWithoutPayments());
+//console.log(await getAllClientsWithoutRequests());
+console.log(await getAllClientsWithoutRequestsAndPayments());

@@ -188,3 +188,65 @@ export const getAllClientsWithRequestsOutOffTime = async () => {
     }
     return clientsData;
 }
+
+
+//1. Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago.
+export const getAllClientsWithoutPayments = async () =>{
+    let res = await fetch("http://localhost:5501/clients");
+    let clients = await res.json();
+    let clientsData = [];
+    for (let i = 0; i < clients.length; i++){
+        let [payments] = await getPaymentByCode(clients[i].client_code);
+        if(payments){
+            
+        } else {
+            clientsData.push({
+                client_name: clients[i].client_name
+            })
+        }
+    }
+    return clientsData;
+}
+
+//2. Devuelve un listado que muestre solamente los clientes que no han realizado ningún pedido.
+export const getAllClientsWithoutRequests = async () =>{
+    let res = await fetch("http://localhost:5501/clients");
+    let clients = await res.json();
+    let clientsData = [];
+    for (let i = 0; i < clients.length; i++){
+        let [payments] = await getRequestByCode(clients[i].client_code);
+        if(payments){ 
+        } else {
+            clientsData.push({
+                client_name: clients[i].client_name
+            })
+        }
+    }
+    return clientsData;
+}
+
+//3. Devuelve un listado que muestre los clientes que no han realizado ningún pago y los que no han realizado ningún pedido.
+export const getAllClientsWithoutRequestsAndPayments = async () =>{
+    let res = await fetch("http://localhost:5501/clients");
+    let clients = await res.json();
+    let clientsPayments = ["Without Payments"];
+    let clientsRequests = ["Without Requests"];
+    for (let i = 0; i < clients.length; i++){
+        let [requests] = await getRequestByCode(clients[i].client_code);
+        let [payments] = await getPaymentByCode(clients[i].client_code);
+        if(payments){   
+        } else {
+            clientsPayments.push({
+                client_name: clients[i].client_name
+            })
+        }
+        if(requests){   
+        } else {
+            clientsRequests.push({
+                client_name: clients[i].client_name
+            })
+        }
+    }
+    console.log(clientsPayments);
+    return clientsRequests;
+}
