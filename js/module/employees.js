@@ -114,3 +114,20 @@ export const getAllEmployeesAndBossesOfTheBosses = async () => {
     }
     return employeesData;
 }
+
+
+
+//4. Devuelve un listado que muestre solamente los empleados que no tienen una oficina asociada.
+export const getAllEmployeesWithoutOffice = async () =>{
+    let res = await fetch("http://localhost:5502/employees")
+    let data = await res.json();
+    let dataUpdate = [];
+    data.forEach(val => {
+        if (val.code_office == null){
+            dataUpdate.push({
+                name: val.name,
+            })
+        }
+    })
+    return dataUpdate;
+}

@@ -1,3 +1,14 @@
+### Comandos para los JSON-SERVER
+
+- npm run clients
+- npm run employees
+- npm run gama
+- npm run offices
+- npm run payments
+- npm run product
+- npm run request_details
+- npm run requests
+
 ### Consultas sobre una tabla
 
 1. Devuelve un listado con el código de oficina y la ciudad donde hay oficinas.
